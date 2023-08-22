@@ -16,7 +16,7 @@ boton.addEventListener('click', (e)=>{
         contador += 1
         htmlContador.innerHTML = `${contador} clicks`
         actualizarTiempo()
-    }else if (tiempoRestante > 0){
+    }else if (tiempoRestante >= 0){
         contador += 1
         htmlContador.innerHTML = `${contador} clicks`
     }
