@@ -7,6 +7,8 @@ const colores = ["red", "blue", "black", "yellow", "orange", "purple", "green", 
 let cps = 0
 let contador = 0
 let tiempoRestante = 10
+let timeoutId = null
+
 
 htmlContador.innerHTML = `${contador} clicks`
 
@@ -33,7 +35,7 @@ function actualizarTiempo() {
         Hiciste ${contador} clicks, un total de: ${cps} clicks por segundo
         `
     } else {
-        setTimeout(actualizarTiempo, 1000) 
+        timeoutId = setTimeout(actualizarTiempo, 1000) 
     }
 }
 
@@ -45,4 +47,5 @@ reset.addEventListener('dblclick', (e)=>{
     boton.disabled = false
     htmlContador.innerHTML = `${contador} clicks`
     htmlText.innerHTML = `Tiempo restante: ${tiempoRestante}`
+    clearTimeout(timeoutId)
 })
